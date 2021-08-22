@@ -1,0 +1,157 @@
+/* . . . . ROOT . . . .  */
+:root {
+  --background-color-border: #eee;
+  --background-color-h: #2f6473;
+  --background-color-sale: #F94B02;
+  --background-color-red: #FC5B5B;
+  --color-text: #777;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&display=swap');
+
+/* . . . . global selector . . . .  */
+* {
+  font-family: 'Titillium Web', sans-serif;
+  text-transform: capitalize;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  background-color: var(--background-color-contain);
+  margin-top: 100px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+
+/* . . . . main . . . .  */
+.sale {
+  position: relative;
+}
+
+.sale::before {
+  content: 'sale!';
+  position: absolute;
+  background-color: var(--background-color-sale);
+  color: #fff;
+  font-size: 16px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  top: 0;
+  left: 0;
+  transform: translate(-15px, -15px);
+  -webkit-transform: translate(-15px, -15px);
+  -moz-transform: translate(-15px, -15px);
+  -ms-transform: translate(-15px, -15px);
+  -o-transform: translate(-15px, -15px);
+}
+
+h3 {
+  background-color: var(--background-color-h);
+  color: #fff;
+  font-size: 22px;
+  font-weight: 400;
+  width: fit-content;
+  padding: 10px 30px;
+  margin-bottom: 30px;
+}
+
+section {
+  padding-left: 40px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 40px;
+}
+
+section figure {
+  height: 360px;
+  outline: 6px solid var(--background-color-border);
+  outline-offset: 2px;
+}
+
+section figure figcaption {
+  padding: 10px 0;
+  text-align: center;
+  position: relative;
+}
+
+section figure figcaption h4 {
+  color: var(--color-text);
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+section figure figcaption span {
+  background-color: #fff;
+  width: fit-content;
+  padding-inline: 10px;
+  color: var(--background-color-h);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+section figure.sale figcaption span {
+  color: var(--background-color-sale);
+}
+
+section figure.sale figcaption span del {
+  color: var(--color-text);
+  font-weight: 400;
+}
+
+section figure figcaption span::before {
+  content: '';
+  width: 90%;
+  height: 3px;
+  background-color: var(--background-color-border);
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  z-index: -1;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
